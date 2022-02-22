@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+<html> 
+
+<div id="buttons">
+  <button class="btn active" onclick="filterSelection('all')"> All </button>
+  <button class="btn" onclick="filterSelection('university')"> University </button>
+  <button class="btn" onclick="filterSelection('faculty')"> Faculty </button>
+  <button class="btn" onclick="filterSelection('alphabetical')"> Alphabetical</button>
+</div>
+
+<!-- Portfolio Gallery Grid --> 
+    <div class="et_pb_row et_pb_row_1">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_3  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+		<div class="et_pb_module et_pb_filterable_portfolio et_pb_filterable_portfolio_0 et_pb_portfolio  et_pb_bg_layout_light et_pb_filterable_portfolio_grid clearfix" data-posts-number="10">
+
+    <div class="et_pb_portfolio_filters clearfix"><ul class="clearfix">
+        <li class="et_pb_portfolio_filter et_pb_portfolio_filter_all"><a href="#" class="active" data-category-slug="all">All</a></li>
+        <li class="et_pb_portfolio_filter"><a href="#" data-category-slug="ryerson-university">Ryerson University</a></li>
+        <li class="et_pb_portfolio_filter"><a href="#" data-category-slug="university-of-waterloo">University of Waterloo</a></li></ul></div>
+
+    <div class="et_pb_portfolio_items_wrapper no_pagination">
+					<div class="et_pb_portfolio_items">	
+              <div id="post-536" class="et_pb_portfolio_item et_pb_grid_item project_category_university-of-waterloo et_pb_filterable_portfolio_item_0_0 post-536 project type-project status-publish hentry project_category-university-of-waterloo project_tag-a"> </div>
+               <div id="post-511" class="et_pb_portfolio_item et_pb_grid_item project_category_ryerson-university et_pb_filterable_portfolio_item_0_1 post-511 project type-project status-publish hentry project_category-ryerson-university project_tag-b project_tag-test"> </div>
+             
+             </div> 
+           </div>
+    </div> 
+
+  <div class= "row"> 
+     < div class= "column" style= "width: 300px"> 
+        <label for="membership">Choose a membership plan:</label>
+            <select name="membership" id="membership">
+               <option value="free">Free</option>
+                <option value="bronze">Bronze</option>
+                <option value="silver" selected>Silver</option>
+                <option value="Gold">Gold</option>
+</select>
+</html> 
