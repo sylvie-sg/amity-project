@@ -1,39 +1,6 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <style>
-      .formPopup {
-        display: none;
-        position: fixed;
-        left: 45%;
-        top: 5%;
-        transform: translate(-50%, 5%);
-        border: 3px solid #999999;
-        z-index: 9;
-      }
-      .formContainer {
-        max-width: 300px;
-        padding: 20px;
-        background-color: #000000;
-      }
- 
-      .formContainer .btn {
-        padding: 12px 20px;
-        border: none;
-        background-color: #8ebf42;
-        color: #fff;
-        cursor: pointer;
-        width: 100%;
-        margin-bottom: 15px;
-        opacity: 0.8;
-      }
-      .formContainer .cancel {
-        background-color: #cc0000;
-      }
-      .formContainer .btn:hover,
-      .openButton:hover {
-        opacity: 1;
-      }
-      
 .filterDiv {
   float: left;
   background-color: #2196F3;
@@ -45,6 +12,17 @@
   display: none;
 }
 
+.classcontainer {
+  background-color: #2196F3;
+  color: #ffffff;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+  margin: 2px;
+  diaplay: none;
+  overflow: hidden;
+}
+
 .show {
   display: block;
 }
@@ -53,6 +31,7 @@
   margin-top: 20px;
   overflow: hidden;
 }
+
 
 /* Style the buttons */
 .btn {
@@ -71,25 +50,6 @@
   background-color: #666;
   color: white;
 }
-
-/* Style the buttons for topics */
-.btn2 {
-  float: left;
-  border: none;
-  outline: none;
-  padding: 12px 16px;
-  background-color: #f1f1f1;
-  cursor: pointer;
-}
-
-.btn2:hover {
-  background-color: #ddd;
-}
-
-.btn2.active {
-  background-color: #666;
-  color: white;
-}
 </style>
 <body>
 
@@ -104,22 +64,16 @@
 </div>
 
 <div class="container"> 
-   <div class="filterDiv cars"><button class="btn2" onclick="filterSelection('BMW')"> BMW</button></div> 
+	
+   <div class="filterDiv cars"><button class="btn" onclick="filterSelection('BMW')"> BMW</button></div> 
    
+   <div class="filterDiv animals"><button class="btn" onclick="filterSelection('CATS')"> CATS</button></div>
 
-   <div class="filterDiv animals"><button class="btn2" onclick="filterSelection('CATS')"> CATS</button></div>
-   </div>
+</div> 
 
 <div class="container">
   
-  <div class="filterDiv cars BMW">
-   <button class="filterDiv cars BMW" onclick="openForm()"><strong>Open Form</strong></button>
-   			<div class="formPopup" id="popupForm">
-          			<h2>Please Log in</h2>
-             		<p> test test test </p>
-          		<button type="button" class="btn cancel" onclick="closeForm()"> Close</button>
-                </div>
-  </div>
+  <div class="filterDiv cars BMW">BMW</div>
   <div class="filterDiv colors fruits">Orange</div>
   <div class="filterDiv cars BMW">Volvo</div>
   <div class="filterDiv colors">Red</div>
@@ -170,14 +124,6 @@ function w3RemoveClass(element, name) {
   element.className = arr1.join(" ");
 }
 
-function openForm() {
-        document.getElementById("popupForm").style.display = "block";
-      }
-
-function closeForm() {
-        document.getElementById("popupForm").style.display = "none";
-      }
-
 // Add active class to the current button (highlight it)
 var btnContainer = document.getElementById("myBtnContainer");
 var btns = btnContainer.getElementsByClassName("btn");
@@ -192,3 +138,4 @@ for (var i = 0; i < btns.length; i++) {
 
 </body>
 </html>
+
