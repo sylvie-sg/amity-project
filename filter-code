@@ -72,6 +72,10 @@
         background-color: #666;
         color: white;
       }
+      /* style alphabetical list */
+      .alphabetLetters{
+        line-height: 15px;
+      }
 </style>
 
 <body>
@@ -85,27 +89,38 @@
   <button class="btn" onclick="filterSelection('faculty')"> Faculty</button>
   <button class="btn" onclick="filterSelection('alphabet')"> alphabetical</button>
 </div>
-
-
+  
 <div class="container"> 
-   <div class="filterDiv institutions BMW toronto"><button class="btn" onclick="filterSelection('BMW')"> BMW University</button></div> 
+   <div class="filterDiv institutions BMW toronto"><button class="btn" onClick="filterSelection('institutions')">All Institutions</button></div>
+   <div class="filterDiv institutions BMW torontp"><button class="btn" onclick="filterSelection('BMW')"> BMW University</button></div> 
    <div class="filterDiv institutions BMW toronto"><button class="btn" onclick="filterSelection('toronto')"> University of Toronto</button></div>
   </div>
 
 <div class="container">
+  <div class="filterDiv faculty business music"><button class="btn" onClick="filterSelection('faculty')">All Faculties</button></div>
   <div class="filterDiv faculty business music"><button class="btn" onClick="filterSelection('business')">Business Department</button> </div>
   <div class="filterDiv faculty business music"><button class="btn" onClick="filterSelection('music')">Music Department</button></div>
 </div>
+  
+<div class="container">
+  <div class="filterDiv alphabet letter-a letter-b letter-c letter-d letter-e letter-f letter-g letter-h letter-i letter-j letter-k letter-l letter-m letter-n letter-o letter-p letter-q letter-q letter-r letter-s letter-t letter-u letter-v letter-w letter-x letter-y letter-z"><p class="alphabetLetters" onClick="filterSelection('alphabet')">All Letters</p></div>
 
+  <div class="filterDiv alphabet letter-a letter-b letter-c letter-d letter-e letter-f letter-g letter-h letter-i letter-j letter-k letter-l letter-m letter-n letter-o letter-p letter-q letter-q letter-r letter-s letter-t letter-u letter-v letter-w letter-x letter-y letter-z"><p class="alphabetLetters" onClick="filterSelection('letter-a')">a</p></div>
+  
+    <div class="filterDiv alphabet letter-a letter-b letter-c letter-d letter-e letter-f letter-g letter-h letter-i letter-j letter-k letter-l letter-m letter-n letter-o letter-p letter-q letter-q letter-r letter-s letter-t letter-u letter-v letter-w letter-x letter-y letter-z"><p class="alphabetLetters" onClick="filterSelection('letter-a')">b</p></div>
+  
+  </div>
+  
+  
 <!-- content that is 'filterable' aka: the professors-->
 <div class="container">
-  <button class="filterDiv institutions faculty toronto music" onclick="openForm()"><strong>Prof01</strong></button>
+  <button class="filterDiv institutions toronto faculty music alphabet letter-a" onclick="openForm()"><strong>Prof01</strong></button>
     <div class="formPopup" id="popupForm">
       <h2>Name</h2>
       <p> biography goes here </p>
       <button type="button" class="btn cancel" onclick="closeForm()"> Close</button>
     </div>  
-  <button class="filterDiv institutions faculty BMW business" onclick="openForm()"><strong>Prof02</strong></button>
+  <button class="filterDiv institutions BMW faculty business alphabet letter-b" onclick="openForm()"><strong>Prof02</strong></button>
       <div class="formPopup" id="popupForm">
         <h2>Name</h2>
         <p> biography goes here </p>
