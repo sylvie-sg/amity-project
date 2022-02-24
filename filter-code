@@ -83,7 +83,7 @@
 <h2>Friends of Amity</h2>
 
 <!-- header filters, they don't disappear -->
-<div class="primaryfilters">
+<div id="myBtnContainer">
   <button class="btn active" onclick="filterSelection('all')"> Show all</button>
   <button class="btn" onclick="filterSelection('institutions')"> institutions</button>
   <button class="btn" onclick="filterSelection('faculty')"> Faculty</button>
@@ -107,7 +107,7 @@
 
   <div class="filterDiv alphabet letter-a letter-b letter-c letter-d letter-e letter-f letter-g letter-h letter-i letter-j letter-k letter-l letter-m letter-n letter-o letter-p letter-q letter-q letter-r letter-s letter-t letter-u letter-v letter-w letter-x letter-y letter-z"><p class="alphabetLetters" onClick="filterSelection('letter-a')">a</p></div>
   
-    <div class="filterDiv alphabet letter-a letter-b letter-c letter-d letter-e letter-f letter-g letter-h letter-i letter-j letter-k letter-l letter-m letter-n letter-o letter-p letter-q letter-q letter-r letter-s letter-t letter-u letter-v letter-w letter-x letter-y letter-z"><p class="alphabetLetters" onClick="filterSelection('letter-a')">b</p></div>
+    <div class="filterDiv alphabet letter-a letter-b letter-c letter-d letter-e letter-f letter-g letter-h letter-i letter-j letter-k letter-l letter-m letter-n letter-o letter-p letter-q letter-q letter-r letter-s letter-t letter-u letter-v letter-w letter-x letter-y letter-z"><p class="alphabetLetters" onClick="filterSelection('letter-b')">b</p></div>
   
   </div>
   
@@ -185,4 +185,6 @@ for (var i = 0; i < btns.length; i++) {
 }
 </script>
 </body>
+  
+  
 </html>
