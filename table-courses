@@ -5,6 +5,16 @@
    /* these came with the code, I think they're for the filtering */   
       .filterDiv {
         border-collapse: collapse; /* Collapse borders */
+        border: 1px solid #ddd; /* Add a grey border */
+        font-size: 18px; /* Increase font-size */
+        float: left;
+        text-align: center;
+        margin: 2px;
+        display: none;
+      }
+  
+   .secondaryfilter {
+        border-collapse: collapse; /* Collapse borders */
         width: 100%; /* Full-width */
         border: 1px solid #ddd; /* Add a grey border */
         font-size: 18px; /* Increase font-size */
@@ -85,22 +95,26 @@
 
 <h2>Friends of Amity</h2>
   
+  <div class="container">
+    
+    <div id="myBtnContainer">
+      <button class= "btn" onClick="filterSelection('search')">Search</button>
+      <button class="btn" onclick="filterSelection('institutions')"> institutions</button>
+      <button class="btn" onclick="filterSelection('faculty')"> Faculty</button>
+      <button class="btn" onclick="filterSelection('alphabet')"> alphabetical</button>
+      <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+    </div>
+    
+  <div class="filterDiv search">
+    
    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search ..">
+  </div>
+  </div>
 
-
-<!-- header filters, they don't disappear -->
-<div id="myBtnContainer">
-  <button class= "btn" onClick="filterSelection('search')">Search</button>
-  
-  <button class="btn" onclick="filterSelection('institutions')"> institutions</button>
-  <button class="btn" onclick="filterSelection('faculty')"> Faculty</button>
-  <button class="btn" onclick="filterSelection('alphabet')"> alphabetical</button>
-  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-</div>
   
 <div class="container"> 
-   <div class="filterDiv institutions BMW toronto"><button class="btn" onClick="filterSelection('institutions')">All Institutions</button></div>
-   <div class="filterDiv institutions BMW torontp"><button class="btn" onclick="filterSelection('BMW')"> BMW University</button></div> 
+   <div id="secondaryfilter" class="filterDiv institutions BMW toronto"><button class="btn" onClick="filterSelection('institutions')">All Institutions</button></div>
+   <div id="secondaryfilter" class="filterDiv institutions BMW torontp"><button class="btn" onclick="filterSelection('BMW')"> BMW University</button></div> 
    <div class="filterDiv institutions BMW toronto"><button class="btn" onclick="filterSelection('toronto')"> University of Toronto</button></div>
   </div>
 
@@ -118,9 +132,6 @@
     <div class="filterDiv alphabet letter-a letter-b letter-c letter-d letter-e letter-f letter-g letter-h letter-i letter-j letter-k letter-l letter-m letter-n letter-o letter-p letter-q letter-q letter-r letter-s letter-t letter-u letter-v letter-w letter-x letter-y letter-z"><button class="btn" onClick="filterSelection('letter-b')">b</button></div>
   
   </div>
-  
-  <form action="myFunction()">
-    <input type="text" id="myInput" oninput="myFunction()" placeholder="Search .."></form>
   
 <!-- content that is 'filterable' aka: the professors-->
 <div class="container">
