@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+    /*style for the pop-ups*/
+      .formPopup {
+        display: none;
+        position: fixed;
+        left: 45%;
+        top: 5%;
+        transform: translate(-50%, 5%);
+        border: 3px solid #999999;
+        z-index: 9;
+      }
+      .formContainer {
+        max-width: 300px;
+        padding: 20px;
+        background-color: #000000;
+      }
+ 
+      .formContainer .btn {
+        padding: 12px 20px;
+        border: none;
+        background-color: #8ebf42;
+        color: #fff;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 15px;
+        opacity: 0.8;
+      }
+      .formContainer .cancel {
+        background-color: #cc0000;
+      }
+      .formContainer .btn:hover,
+      .openButton:hover {
+        opacity: 1;
+      }
+  
+   /* filtering styles ;) */   
+      .filterDiv {
+        float: left;
+        color: #ffffff;
+        text-align: center;
+        margin: 2px;
+        display: none;
+      }
+      .show {
+        display: block;
+      }
+      .container {
+        margin-top: 20px;
+        overflow: hidden;
+      }
+      .show {
+        display: block;
+      }
+      .container {
+        margin-top: 20px;
+        overflow: hidden;
+      }
+      
+       .protfolio {
+        border: none;
+        outline: none;
+        height: 150px;
+        width: 150px;
+        padding: 12px 16px;
+        background-color: #f1f1f1;
+        cursor: pointer;
+      }
+
+    /* Style the buttons */
+      .btn {
+        border: none;
+        outline: none;
+        padding: 12px 16px;
+        background-color: #f1f1f1;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background-color: #ddd;
+      }
+
+      .btn.active {
+        background-color: #666;
+        color: white;
+      }
+      
+    /* search bar design */
+    #myInput {
+      background-image: url('/css/searchicon.png');
+      background-position: 10px 12px; /* Position the search icon */
+      background-repeat: no-repeat; /* Do not repeat the icon image */
+      width: 100%; /* Full-width */
+      font-size: 16px; /* Increase font-size */
+      padding: 12px 20px 12px 40px; /* Add some padding */
+      border: 1px solid #ddd; /* Add a grey border */
+      margin-bottom: 12px; /* Add some space below the input */
+    }
+
+    /* table designs*/
+    #myTable {
+      border-collapse: collapse; /* Collapse borders */
+      width: 100%; /* Full-width */
+      border: 1px solid #ddd; /* Add a grey border */
+      font-size: 18px; /* Increase font-size */
+      color: #454545;
+    }
+
+    #myTable th, #myTable td {
+      text-align: left; /* Left-align text */
+      padding: 12px; /* Add padding */
+      color: #454545;
+    }
+
+    #myTable tr {
+      /* Add a bottom border to all table rows */
+      border-bottom: 1px solid #ddd;
+      color: #454545;
+    }
+
+    #myTable tr.header, #myTable tr:hover {
+      /* Add a grey background color to the table header and on hover */
+      background-color: #f1f1f1;
+      color: #454545;
+    }
+  
+</style>
+
+<h2>Template</h2>
+
+<!-- header filters, they don't disappear -->
+<div class="container">
+    
+    <div id="myBtnContainer">
+        <button class="btn active" onclick="filterSelection('portfolio')" onload="filterSelection('portfolio')"> Show all</button>
+        <button class="btn" onclick="filterSelection('institutions')"> institutions</button>
+        <button class= "btn" onClick="filterSelection('search')">Search</button>
+        <button class="btn" onclick="filterSelection('alphabet')"> alphabetical</button>
+    </div>
+  
+    <div class="filterDiv search">
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search ..">
+    </div>
+</div>
+
+<!-- secondary buttons for institution -->
+<div class="container"> 
+    <div class="filterDiv institutions BMW toronto"><button class="btn" onClick="filterSelection('institutions')">All Institutions</button></div>
+    <div class="filterDiv institutions BMW toronto"><button class="btn" onclick="filterSelection('BMW')"> BMW University</button></div>
+    <div class="filterDiv institutions BMW toronto"><button class="btn" onclick="filterSelection('toronto')"> University of Toronto</button></div>
+</div>
+
+<!-- secondary buttons for alphabet--> 
+<div class="container">
+    <div class="filterDiv alphabet letter-a letter-b"><button class="btn" onClick="filterSelection('alphabet')">all</button></div>
+    <div class="filterDiv alphabet letter-a letter-b"><button class="btn" onClick="filterSelection('letter-a')">a</button></div>
+    <div class="filterDiv alphabet letter-a letter-b"><button class="btn" onClick="filterSelection('letter-b')">b</button></div>
+</div>
+  
+<!-- content that is 'filterable' aka: the professors-->
+<div class="container">
+    <div  class="filterDiv institutions portfolio toronto">
+    <button class="protfolio" onclick="openForm()"><strong>Prof01</strong></button>
+        <div class="formPopup" id="popupForm">
+            <h2>Name</h2>
+            <p> biography goes here </p>
+            <button type="button" class="btn cancel" onclick="closeForm()"> Close</button>
+        </div>
+    </div>
+    
+    <div class="filterDiv institutions portfolio BMW">
+    <button class="protfolio" onclick="openForm()"><strong>Prof02</strong></button>
+        <div class="formPopup" id="popupForm">
+            <h2>Name</h2>
+            <p> biography goes here </p>
+            <button type="button" class="btn cancel" onclick="closeForm()"> Close</button>
+        </div>  
+    </div>  
+</div>
+
+<!-- filterable table --> 
+<div>
+    <table id="myTable" class="filterDiv search alphabet letter-a letter-b">
+    <tr class="header">
+        <th style="width:40%;">Course</th>
+        <th style="width:3%;">Professor</th>
+    </tr>
+    
+    <tr>
+        <td class="filterDiv search alphabet letter-a">
+        <p>Course 1 this is a course about</p></td>
+    </tr>
+    
+   <tr>
+        <td class="filterDiv search alphabet letter-b">
+        <p>Course 2 this is a course about</p></td>
+    </tr>
+    </table>
+</div>
+
+<!-- javascript -->
+
+<script>
+// actual selection code
+    filterSelection("filterDiv")
+    function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("filterDiv");
+        if (c == "all") c = " ";
+        for (i = 0; i < x.length; i++) {
+        RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
+        }
+    }
+            
+//to add filtered items
+    function AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+         }
+    }
+// to remove unfiltered items
+    function RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+                  arr1.splice(arr1.indexOf(arr2[i]), 1);     
+        }
+    }
+        element.className = arr1.join(" ");
+    }
+    
+// code for "pop-ups" for the professors 
+    function openForm() {
+        document.getElementById("popupForm").style.display = "block";
+      }
+
+    function closeForm() {
+        document.getElementById("popupForm").style.display = "none";
+      }
+
+// Add active class to the current button (highlight it)
+    var btnContainer = document.getElementById("myBtnContainer");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+        });
+    }
+  </script>
+  
+</body>
+</html>
